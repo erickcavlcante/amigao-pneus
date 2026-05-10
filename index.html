@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigão Pneus e Mecânica | O Melhor Preço da Região</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-heading { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+
+        /* Nova Paleta de Cores */
+        .bg-brand-blue    { background-color: #1e3a8a; } 
+        .bg-brand-yellow  { background-color: #facc15; } 
+        .text-brand-blue  { color: #1e3a8a; }
+        .text-brand-yellow { color: #facc15; }
+        .border-brand-blue { border-color: #1e3a8a; }
+        .border-brand-yellow { border-color: #facc15; }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(15, 23, 42, 0.95)),
+                        url('https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-shadow { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.2);
+        }
+
+        /* Mobile Menu Overlay */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .whatsapp-float { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%   { transform: scale(1);    box-shadow: 0 0 0 0    rgba(34,197,94,0.7); }
+            70%  { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(34,197,94,0);   }
+            100% { transform: scale(1);    box-shadow: 0 0 0 0    rgba(34,197,94,0);   }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="fixed w-full z-50 bg-brand-blue border-b border-white/10 shadow-lg">
+        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="bg-brand-yellow p-1.5 rounded">
+                    <i data-lucide="wrench" class="text-blue-900 w-5 h-5 sm:w-6 sm:h-6"></i>
+                </div>
+                <span class="font-heading text-white text-lg sm:text-xl font-black tracking-tighter">
+                    Amigão<span class="text-brand-yellow">Pneus</span>
+                </span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-blue-50 uppercase tracking-wider">
+                <a href="#promocoes" class="hover:text-brand-yellow transition">Promoções</a>
+                <a href="#servicos"  class="hover:text-brand-yellow transition">Serviços</a>
+                <a href="#contato"   class="hover:text-brand-yellow transition">Localização</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button onclick="openWhatsApp()" class="hidden sm:flex bg-brand-yellow hover:bg-yellow-500 text-blue-950 px-5 py-2 rounded-full font-bold text-xs sm:text-sm transition-all items-center gap-2 uppercase">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    WhatsApp
+                </button>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="lg:hidden text-white p-2">
+                    <i data-lucide="menu" id="menu-icon" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-brand-blue flex flex-col p-8 lg:hidden">
+        <div class="flex justify-between items-center mb-12">
+            <span class="font-heading text-white text-xl font-black">MENU</span>
+            <button id="menu-close" class="text-white"><i data-lucide="x" class="w-8 h-8"></i></button>
+        </div>
+        <nav class="flex flex-col gap-8 text-2xl font-bold text-white uppercase italic">
+            <a href="#promocoes" onclick="closeMenu()" class="flex items-center justify-between border-b border-white/10 pb-4">Promoções <i data-lucide="chevron-right"></i></a>
+            <a href="#servicos"  onclick="closeMenu()" class="flex items-center justify-between border-b border-white/10 pb-4">Serviços <i data-lucide="chevron-right"></i></a>
+            <a href="#contato"   onclick="closeMenu()" class="flex items-center justify-between border-b border-white/10 pb-4">Localização <i data-lucide="chevron-right"></i></a>
+        </nav>
+        <button onclick="openWhatsApp(); closeMenu();" class="mt-auto bg-brand-yellow text-blue-950 w-full py-5 rounded-xl font-black text-lg flex items-center justify-center gap-3">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+            ORÇAMENTO AGORA
+        </button>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero-gradient min-h-[85vh] sm:min-h-[90vh] flex items-center pt-28 pb-12 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+                <div class="z-10 text-center lg:text-left">
+                    <div class="mb-4 sm:mb-6">
+                        <span class="bg-brand-yellow text-blue-900 px-3 py-1 sm:px-4 sm:py-1.5 rounded-md text-[10px] sm:text-xs font-black uppercase inline-block tracking-widest">
+                            Qualidade e Segurança
+                        </span>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white leading-tight mb-4 sm:mb-6">
+                        A melhor solução em <br>
+                        <span class="text-brand-yellow">Pneus e Mecânica!</span>
+                    </h1>
+                    <p class="text-base sm:text-lg md:text-xl text-blue-50 mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed opacity-90">
+                        Pneus importados, amortecedores e manutenção especializada com as melhores condições. Atendimento rápido para o seu veículo.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10 max-w-lg mx-auto lg:mx-0">
+                        <div class="flex items-center justify-center lg:justify-start gap-2 text-white">
+                            <i data-lucide="check-circle" class="text-brand-yellow w-4 h-4 sm:w-5 sm:h-5"></i>
+                            <span class="font-bold text-[10px] sm:text-xs uppercase">Até 10x sem juros</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start gap-2 text-white">
+                            <i data-lucide="shield-check" class="text-brand-yellow w-4 h-4 sm:w-5 sm:h-5"></i>
+                            <span class="font-bold text-[10px] sm:text-xs uppercase">5 Anos de Garantia</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start gap-2 text-white">
+                            <i data-lucide="award" class="text-brand-yellow w-4 h-4 sm:w-5 sm:h-5"></i>
+                            <span class="font-bold text-[10px] sm:text-xs uppercase">Especialistas</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                        <button onclick="openWhatsApp()" class="bg-brand-yellow hover:bg-yellow-500 text-blue-950 px-6 py-4 sm:px-8 rounded-lg font-black text-sm sm:text-base transition shadow-xl flex items-center justify-center gap-3">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            ORÇAMENTO WHATSAPP
+                        </button>
+                        <a href="#promocoes" class="border-2 border-white/20 hover:border-brand-yellow text-white px-6 py-4 sm:px-8 rounded-lg font-black text-sm sm:text-base transition flex items-center justify-center">
+                            VER PROMOÇÕES
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative hidden lg:flex items-center justify-center p-4">
+                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-brand-yellow rounded-full flex flex-col items-center justify-center text-center p-4 transform rotate-12 z-20 shadow-2xl border-4 border-brand-blue">
+                        <span class="text-blue-900 font-black leading-tight text-xs italic uppercase">OFERTAS <br> ESPECIAIS</span>
+                    </div>
+                    <div class="relative w-full aspect-square max-w-[450px] overflow-hidden rounded-2xl shadow-2xl border-4 border-white/10">
+                        <img
+                            src="https://images.unsplash.com/photo-1744294081348-dfe22ad4f795?q=80&w=600&auto=format&fit=crop"
+                            alt="Pneu premium"
+                            class="w-full h-full object-cover"
+                            loading="lazy">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMOÇÕES -->
+    <section id="promocoes" class="py-16 sm:py-24 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-heading font-black mb-4 italic text-brand-blue uppercase">Promoções</h2>
+                <div class="w-20 h-1.5 bg-brand-yellow mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Aro 13 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-slate-200 card-shadow flex flex-col">
+                    <div class="aspect-video sm:h-52 overflow-hidden bg-slate-100">
+                        <img src="https://plus.unsplash.com/premium_photo-1661400479932-7ad77032ffa9?q=80&w=600" alt="Pneu Aro 13" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-bold text-lg text-brand-blue uppercase">Pneu Premium <br><span class="text-slate-400 text-sm">Aro 13</span></h3>
+                        <p class="text-[10px] text-slate-400 uppercase mt-4">A partir de</p>
+                        <p class="text-3xl font-black text-brand-blue mb-6 italic">R$ 209,90</p>
+                        <button onclick="openWhatsApp()" class="w-full bg-brand-blue text-white font-bold py-3.5 rounded-lg text-xs uppercase tracking-widest hover:bg-brand-yellow hover:text-blue-900 transition">Consultar</button>
+                    </div>
+                </div>
+
+                <!-- Aro 14 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-slate-200 card-shadow flex flex-col">
+                    <div class="aspect-video sm:h-52 overflow-hidden bg-slate-100">
+                        <img src="https://plus.unsplash.com/premium_photo-1661400479932-7ad77032ffa9?q=80&w=600" alt="Pneu Aro 14" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-bold text-lg text-brand-blue uppercase">Pneu Premium <br><span class="text-slate-400 text-sm">Aro 14</span></h3>
+                        <p class="text-[10px] text-slate-400 uppercase mt-4">A partir de</p>
+                        <p class="text-3xl font-black text-brand-blue mb-6 italic">R$ 219,90</p>
+                        <button onclick="openWhatsApp()" class="w-full bg-brand-blue text-white font-bold py-3.5 rounded-lg text-xs uppercase tracking-widest hover:bg-brand-yellow hover:text-blue-900 transition">Consultar</button>
+                    </div>
+                </div>
+
+                <!-- Aro 15 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-slate-200 card-shadow flex flex-col">
+                    <div class="aspect-video sm:h-52 overflow-hidden bg-slate-100">
+                        <img src="https://plus.unsplash.com/premium_photo-1661400479932-7ad77032ffa9?q=80&w=600" alt="Pneu Aro 15" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-bold text-lg text-brand-blue uppercase">Pneu Premium <br><span class="text-slate-400 text-sm">Aro 15</span></h3>
+                        <p class="text-[10px] text-slate-400 uppercase mt-4">A partir de</p>
+                        <p class="text-3xl font-black text-brand-blue mb-6 italic">R$ 249,90</p>
+                        <button onclick="openWhatsApp()" class="w-full bg-brand-blue text-white font-bold py-3.5 rounded-lg text-xs uppercase tracking-widest hover:bg-brand-yellow hover:text-blue-900 transition">Consultar</button>
+                    </div>
+                </div>
+
+                <!-- Aro 16 Destaque -->
+                <div class="bg-white rounded-xl overflow-hidden border-2 border-brand-yellow card-shadow relative flex flex-col">
+                    <div class="absolute top-3 right-3 bg-brand-yellow text-blue-900 px-3 py-1 font-black text-[10px] uppercase rounded">Destaque</div>
+                    <div class="aspect-video sm:h-52 overflow-hidden bg-slate-100">
+                        <img src="https://plus.unsplash.com/premium_photo-1661400479932-7ad77032ffa9?q=80&w=600" alt="Pneu Aro 16" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-bold text-lg text-brand-blue uppercase">Pneu Premium <br><span class="text-slate-400 text-sm">Aro 16</span></h3>
+                        <p class="text-[10px] text-slate-400 uppercase mt-4">A partir de</p>
+                        <p class="text-3xl font-black text-brand-blue mb-6 italic">R$ 299,90</p>
+                        <button onclick="openWhatsApp()" class="w-full bg-brand-blue text-white font-bold py-3.5 rounded-lg text-xs uppercase tracking-widest hover:bg-brand-yellow hover:text-blue-900 transition shadow-lg shadow-brand-blue/20">Consultar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMORTECEDORES -->
+    <section class="py-16 sm:py-20 bg-brand-blue text-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-0 bg-blue-900/40 rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10">
+                <div class="h-64 sm:h-[450px] w-full overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1751244664497-49e991b8ed3a?q=80&w=870"
+                        alt="Manutenção"
+                        class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition duration-700">
+                </div>
+                <div class="p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
+                    <h2 class="text-2xl sm:text-4xl font-heading font-black mb-4 sm:mb-6 text-white leading-tight uppercase italic">Amortecedores <br><span class="text-brand-yellow">Preço Especial</span></h2>
+                    <div class="mb-8">
+                        <p class="text-brand-yellow font-bold uppercase tracking-widest text-[10px] sm:text-xs mb-2">Remanufaturado com Garantia</p>
+                        <div class="flex items-baseline gap-2 sm:gap-4">
+                            <span class="text-4xl sm:text-6xl font-black italic text-white leading-none">R$ 99,90</span>
+                            <span class="text-blue-200 text-sm sm:text-base">/ cada</span>
+                        </div>
+                    </div>
+                    <button onclick="openWhatsApp()" class="bg-brand-yellow hover:bg-yellow-500 text-blue-950 px-6 py-4 sm:px-10 sm:py-5 rounded-lg font-black flex items-center justify-center lg:justify-start gap-4 transition text-sm sm:text-lg shadow-xl">
+                        FALAR COM ESPECIALISTA
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TROCA DE ÓLEO -->
+    <section class="py-16 sm:py-24 bg-brand-yellow relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="text-center lg:text-left">
+                    <span class="inline-block bg-brand-blue text-white px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest mb-6">Combo Imperdível</span>
+                    <h2 class="text-4xl sm:text-5xl font-heading font-black text-brand-blue leading-none mb-6 italic">
+                        Troca de Óleo<br>+ Filtro
+                    </h2>
+                    <div class="flex items-baseline justify-center lg:justify-start gap-3 mb-8">
+                        <span class="text-[10px] font-bold uppercase text-blue-900/60">A partir de</span>
+                        <span class="text-5xl sm:text-7xl font-black italic text-brand-blue leading-none">R$ 249,90</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button onclick="openWhatsApp()" class="bg-brand-blue hover:bg-blue-900 text-white px-8 py-4 rounded-lg font-black flex items-center justify-center gap-3 transition text-sm shadow-xl">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            GARANTIR MINHA VAGA
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-brand-blue rounded-2xl p-6 sm:p-10 shadow-2xl border border-white/10">
+                    <p class="text-brand-yellow font-black uppercase tracking-widest text-[10px] mb-8 text-center sm:text-left underline decoration-brand-yellow underline-offset-8">Vantagens Inclusas</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 bg-brand-yellow/10 border border-brand-yellow/30 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-brand-yellow transition">
+                                <i data-lucide="droplets" class="text-brand-yellow group-hover:text-blue-900 w-5 h-5"></i>
+                            </div>
+                            <p class="font-bold text-white text-xs uppercase">Óleo de <br>Qualidade</p>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 bg-brand-yellow/10 border border-brand-yellow/30 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-brand-yellow transition">
+                                <i data-lucide="wind" class="text-brand-yellow group-hover:text-blue-900 w-5 h-5"></i>
+                            </div>
+                            <p class="font-bold text-white text-xs uppercase">Higienização <br>Ar-Condicionado <span class="text-brand-yellow">Gátis</span></p>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 bg-brand-yellow/10 border border-brand-yellow/30 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-brand-yellow transition">
+                                <i data-lucide="clipboard-check" class="text-brand-yellow group-hover:text-blue-900 w-5 h-5"></i>
+                            </div>
+                            <p class="font-bold text-white text-xs uppercase">Checkup <br>Geral <span class="text-brand-yellow">Grátis</span></p>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 bg-brand-yellow/10 border border-brand-yellow/30 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-brand-yellow transition">
+                                <i data-lucide="filter" class="text-brand-yellow group-hover:text-blue-900 w-5 h-5"></i>
+                            </div>
+                            <p class="font-bold text-white text-xs uppercase">Filtro <br>Incluso</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-16 sm:py-24 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl sm:text-4xl font-heading font-black mb-12 sm:mb-16 italic text-brand-blue uppercase">Mecânica Completa</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+                <div class="p-6 sm:p-8 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-blue transition group">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue group-hover:bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transition">
+                        <i data-lucide="disc" class="text-brand-yellow group-hover:text-blue-900 w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-black uppercase text-[10px] sm:text-xs text-brand-blue">Pneus</h4>
+                </div>
+                <div class="p-6 sm:p-8 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-blue transition group">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue group-hover:bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transition">
+                        <i data-lucide="activity" class="text-brand-yellow group-hover:text-blue-900 w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-black uppercase text-[10px] sm:text-xs text-brand-blue">Alinhamento</h4>
+                </div>
+                <div class="p-6 sm:p-8 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-blue transition group">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue group-hover:bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transition">
+                        <i data-lucide="layers" class="text-brand-yellow group-hover:text-blue-900 w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-black uppercase text-[10px] sm:text-xs text-brand-blue">Suspensão</h4>
+                </div>
+                <div class="p-6 sm:p-8 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-blue transition group">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-brand-blue group-hover:bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 transition">
+                        <i data-lucide="settings" class="text-brand-yellow group-hover:text-blue-900 w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-black uppercase text-[10px] sm:text-xs text-brand-blue">Freios</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section id="contato" class="py-16 sm:py-24 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-heading font-black mb-12 italic text-brand-blue text-center uppercase">Localização</h2>
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch max-w-6xl mx-auto">
+
+                <div class="w-full lg:w-1/3 flex flex-col gap-8 bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="map-pin" class="text-brand-blue w-6 h-6 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <p class="font-black text-[10px] uppercase tracking-widest text-slate-400 mb-1">Endereço</p>
+                                <p class="font-bold text-lg text-brand-blue" id="display-endereco"></p>
+                                <p class="text-slate-500 font-medium text-sm" id="display-cidade"></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="phone" class="text-brand-blue w-6 h-6 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <p class="font-black text-[10px] uppercase tracking-widest text-slate-400 mb-1">Contato</p>
+                                <p class="font-bold text-lg text-brand-blue">(16) 99646-1492</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="clock" class="text-brand-blue w-6 h-6 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <p class="font-black text-[10px] uppercase tracking-widest text-slate-400 mb-1">Horário</p>
+                                <p class="text-slate-600 font-medium text-sm" id="display-horario"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-slate-100 flex flex-col gap-3">
+                        <a href="https://www.google.com/maps/search/rua+sete+de+setembro+333+centro+ibitinga+sp" target="_blank" class="bg-brand-blue text-white w-full py-4 rounded-lg font-black text-xs uppercase flex items-center justify-center gap-2 hover:bg-blue-900 transition shadow-lg">
+                            <i data-lucide="navigation" class="w-4 h-4"></i> ABRIR MAPA
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/3 h-[350px] sm:h-[450px] rounded-2xl overflow-hidden border border-slate-200 shadow-2xl">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.2!2d-48.8469!3d-21.7622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf09e5e5e5e5e5%3A0x0!2sRua+Sete+de+Setembro%2C+333+-+Centro%2C+Ibitinga+-+SP!5e0!3m2!1spt-BR!2sbr!4v1715000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa Localização"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-blue text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <span class="font-heading text-white text-xl font-black tracking-tighter">Amigão<span class="text-brand-yellow">Pneus</span></span>
+            </div>
+            <p class="text-blue-300 text-[10px] uppercase tracking-[0.2em] opacity-50">Ibitinga - São Paulo</p>
+            <p class="text-blue-200 text-[10px] mt-8 opacity-40">© 2026 Todos os direitos reservados.</p>
+            <p class="text-blue-200 text-[10px] mt-2 opacity-40">Developed by Erick Cavalcante.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <button onclick="openWhatsApp()" class="whatsapp-float fixed bottom-6 right-6 z-[99] bg-green-500 text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition">
+        <i data-lucide="message-circle" class="w-7 h-7 sm:w-8 sm:h-8"></i>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script>
+        var CONFIG = {
+            whatsapp: '5516996461492',
+            whatsappMsg: 'Olá! Vi o site e gostaria de um orçamento.',
+            endereco: 'Rua Sete de Setembro, 333',
+            cidade: 'Centro, Ibitinga - SP',
+            horario: 'Seg a Sex: 08h-18h | Sáb: 08h-13h'
+        };
+
+        document.getElementById('display-endereco').textContent = CONFIG.endereco;
+        document.getElementById('display-cidade').textContent = CONFIG.cidade;
+        document.getElementById('display-horario').textContent = CONFIG.horario;
+
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function openMenu() { mobileMenu.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { mobileMenu.classList.remove('active'); document.body.style.overflow = ''; }
+
+        menuToggle.addEventListener('click', openMenu);
+        menuClose.addEventListener('click', closeMenu);
+
+        function openWhatsApp() {
+            window.open('https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(CONFIG.whatsappMsg), '_blank');
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                }
+            });
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
